@@ -1,0 +1,120 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Attach to Segmenter",
+        "type": "cppdbg",
+        "request": "attach",
+        "program": "${workspaceRoot}/build/bin/das-audio-segmenter",
+        "processId": "${command:pickProcess}",
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ]
+      },
+      {
+        "name": "Launch Segmenter",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceRoot}/build/bin/das-audio-segmenter",
+        // "args": ["-i", "http://ondemand-origin.cdnstream1.com/zjb/audio/download/8d/1b/57/8d1b5775-4245-4c68-a564-01e66c6ff1b0.mp3", "-o", "output"],
+        // "args": ["-i", "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3", "-o", "tmp/output"],
+        // "args": ["-i", "sine_mono.mp3", "-o", "tmp/output"],
+        // "args": ["-i", "test-files/sine_mono.mp3", "-o", "tmp/output", "-f", "CODEC=mp3,BITRATE=128,SAMPLERATE=44100,CHANNELS=stereo"],
+        // "args": ["-i", "test-files/sine_mono.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "test-files/audio.mp3", "-o", "tmp/output", "-f", "CODEC=mp3,BITRATE=128,SAMPLERATE=44100,CHANNELS=mono"],
+        // "args": ["-i", "test-files/audio.mp3", "-o", "tmp/output"],
+        // "args": ["-i", "test-files/audio.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "test-files/sss.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        "args": ["-i", "https://das-mock-audio.labs.soundstack.com/mock/audio/sine/id=1/freq=1000/duration=13/comment=/audio.mp3", "-o", "tmp/output"],
+        // "args": ["-i", "test-files/sss_stripped.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "https://streaming.live365.com/a20539", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "http://localhost:8000/stream", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "https://ais-edge50-live365-dal02.cdnstream.com/a63878", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "https://us4.internet-radio.com/proxy/douglassinclair?mp=/stream", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "test-files/hipsybeats-advertising.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "test-files/audio_broken_comment.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "test-files/audio_duration10.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "test-files/audio_duration8000.mp3", "-o", "tmp/output"],
+        // "args": ["-i", "https://das-mock-audio.labs.soundstack.com/mock/audio/sine/bitrate=128/channels=1/duration=1000/freq=200/id=ce83a7ff-4b06-4d31-91a4-d628a8af4855/samplerate=44100/audio.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "Born-to-Roll-clip.mp3", "-o", "tmp/output", "-f", "CODEC=mp3,BITRATE=128,SAMPLERATE=32000,CHANNELS=mono"],
+        // "args": ["-i", "https://filesamples.com/samples/audio/aac/sample4.aac", "-o", "tmp/output"],
+        // "args": ["-i", "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3", "-o", "output"],
+        // "args": ["https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3", "output.mp3"], // transcoding.cpp
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ],
+        "preLaunchTask": "conan",
+        "miDebuggerPath": "/usr/bin/gdb"
+      },
+      {
+        "name": "Launch Transcoder",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceRoot}/build/bin/transcoding",
+        // "args": ["-i", "http://ondemand-origin.cdnstream1.com/zjb/audio/download/8d/1b/57/8d1b5775-4245-4c68-a564-01e66c6ff1b0.mp3", "-o", "output"],
+        // "args": ["-i", "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3", "-o", "tmp/output"],
+        // "args": ["-i", "sine_mono.mp3", "-o", "tmp/output"],
+        // "args": ["-i", "test-files/sine_mono.mp3", "-o", "tmp/output", "-f", "CODEC=mp3,BITRATE=128,SAMPLERATE=44100,CHANNELS=stereo"],
+        // "args": ["-i", "test-files/sine_mono.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "test-files/audio.mp3", "-o", "tmp/output", "-f", "CODEC=mp3,BITRATE=128,SAMPLERATE=44100,CHANNELS=mono"],
+        // "args": ["-i", "test-files/audio.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        "args": ["-i", "test-files/audio_broken_comment.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "test-files/audio_duration10.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "test-files/audio_duration8000.mp3", "-o", "tmp/output"],
+        // "args": ["-i", "https://das-mock-audio.labs.soundstack.com/mock/audio/sine/bitrate=128/channels=1/duration=1000/freq=200/id=ce83a7ff-4b06-4d31-91a4-d628a8af4855/samplerate=44100/audio.mp3", "-o", "tmp/output", "-c", "test-files/events.json"],
+        // "args": ["-i", "Born-to-Roll-clip.mp3", "-o", "tmp/output", "-f", "CODEC=mp3,BITRATE=128,SAMPLERATE=32000,CHANNELS=mono"],
+        // "args": ["-i", "https://filesamples.com/samples/audio/aac/sample4.aac", "-o", "tmp/output"],
+        // "args": ["-i", "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3", "-o", "output"],
+        // "args": ["https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3", "output.mp3"], // transcoding.cpp
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ],
+        "preLaunchTask": "conan",
+        "miDebuggerPath": "/usr/bin/gdb"
+      },
+      {
+        "name": "Launch Tests",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceRoot}/build/bin/tests",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ],
+        "preLaunchTask": "conan",
+        "miDebuggerPath": "/usr/bin/gdb"
+      },
+    ]
+  }

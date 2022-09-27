@@ -1,0 +1,66 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Attach to Server",
+        "type": "cppdbg",
+        "request": "attach",
+        "program": "${workspaceRoot}/build/bin/das-edge-server",
+        "processId": "${command:pickProcess}",
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ]
+      },
+      {
+        "name": "Launch Server",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceRoot}/build/bin/das-edge-server",
+        "args": [
+          // "-i", "demo", "-c", "config.xml"
+          // "-i", "demo", "-c", "config.xml", "-v"
+          "-i", "demo", "-c", "livestreaming-config.xml"
+      ],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ],
+        "preLaunchTask": "conan",
+        "miDebuggerPath": "/usr/bin/gdb"
+      },
+      {
+        "name": "Launch Tests",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceRoot}/build/bin/tests",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ],
+        "preLaunchTask": "conan",
+        "miDebuggerPath": "/usr/bin/gdb"
+      },
+    ]
+  }

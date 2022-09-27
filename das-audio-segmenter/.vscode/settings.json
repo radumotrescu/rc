@@ -1,0 +1,113 @@
+{
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "googletest.failed",
+                "settings": {
+                    "foreground": "#f00"
+                }
+            },
+            {
+                "scope": "googletest.passed",
+                "settings": {
+                    "foreground": "#0f0"
+                }
+            },
+            {
+                "scope": "googletest.run",
+                "settings": {
+                    "foreground": "#0f0"
+                }
+            }
+        ]
+    },
+    "files.associations": {
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "*.ipp": "cpp",
+        "exception": "cpp",
+        "optional": "cpp",
+        "*.tcc": "cpp",
+        "avcodec.h": "c",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "csignal": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "any": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "strstream": "cpp",
+        "bit": "cpp",
+        "bitset": "cpp",
+        "cfenv": "cpp",
+        "chrono": "cpp",
+        "cinttypes": "cpp",
+        "codecvt": "cpp",
+        "compare": "cpp",
+        "complex": "cpp",
+        "concepts": "cpp",
+        "condition_variable": "cpp",
+        "coroutine": "cpp",
+        "cstdint": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "ratio": "cpp",
+        "regex": "cpp",
+        "source_location": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "fstream": "cpp",
+        "future": "cpp",
+        "initializer_list": "cpp",
+        "iomanip": "cpp",
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "mutex": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
+        "ranges": "cpp",
+        "scoped_allocator": "cpp",
+        "shared_mutex": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "stop_token": "cpp",
+        "streambuf": "cpp",
+        "thread": "cpp",
+        "valarray": "cpp",
+        "variant": "cpp",
+        "csetjmp": "cpp",
+        "rope": "cpp",
+        "slist": "cpp",
+        "*.inc": "cpp",
+        "charconv": "cpp",
+        "numbers": "cpp",
+        "span": "cpp"
+    }
+}
