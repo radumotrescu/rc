@@ -7,6 +7,11 @@
   "python.linting.mypyPath": ".venv/bin/mypy",
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": ".venv/bin/flake8",
-  "python.testing.pytestEnabled": true,
   "python.testing.pytestPath": ".venv/bin/pytest",
+  "python.testing.pytestArgs": [
+    "ads_manager"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.formatting.provider": "black",
 }
