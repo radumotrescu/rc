@@ -13,7 +13,7 @@ lvim.builtin.treesitter.rainbow.enable = true
 vim.wo.relativenumber = true
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "tokyonight-storm"
+lvim.colorscheme = "codedark"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -168,6 +168,8 @@ lvim.lsp.installer.setup.automatic_installation = true
 -- Additional Plugins
 lvim.plugins = {
     {
+      "tomasiser/vim-code-dark",
+      "lunarvim/colorschemes",
       "folke/trouble.nvim",
       "nvim-neotest/neotest",
       "alfaix/neotest-gtest",
@@ -222,3 +224,11 @@ require("neotest").setup({
 
 require("stay-centered")
 lvim.builtin.treesitter.rainbow.enable = true
+
+-- local set = vim.opt -- set options
+-- set.tabstop = 4
+-- set.softtabstop = 4
+-- set.shiftwidth = 4
+
+lvim.builtin.indentlines.options.use_treesitter = true
+lvim.builtin.nvimtree.setup.view.adaptive_size = true

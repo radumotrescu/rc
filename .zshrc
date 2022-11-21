@@ -1,10 +1,16 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export MY_INSTALL_DIR="$HOME/.local"
-export PATH="$MY_INSTALL_DIR/bin:$PATH"
+
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
@@ -12,7 +18,7 @@ export EDITOR="$VISUAL"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="dpoggi"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -39,7 +45,7 @@ ZSH_THEME="dpoggi"
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
-#DISABLE_LS_COLORS="true"
+# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -64,7 +70,7 @@ COMPLETION_WAITING_DOTS="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="dd.mm.yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -74,7 +80,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vscode vi-mode sudo web-search dirhistory history)
+plugins=(git vi-mode vscode web-search dirhistory history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,15 +109,22 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="lsd"
-alias zshconfig="vim ~/.zshrc"
-alias edgeserver="cd ~/workdir/das-edge-server"
-alias dasproto="cd ~/workdir/das-proto/example"
-alias audioman="cd ~/workdir/audio-manager/"
-alias audioseg="cd ~/workdir/audio-segmenter/"
-alias display50="sudo ddcutil --display 1 setvcp 10 50"
-alias display75="sudo ddcutil --display 0 setvcp 10 75"
-alias display100="sudo ddcutil --display 1 setvcp 10 100"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+alias ls=lsd
+alias v=lvim
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export AWS_PROFILE=mediacreek
-export JMETER_HOME=~/workdir/jmeter
+export PATH=/home/radum/.cargo/bin:$PATH
+export PATH=/home/radum/.local/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# opam configuration
+[[ ! -r /home/radum/.opam/opam-init/init.zsh ]] || source /home/radum/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
