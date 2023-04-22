@@ -100,18 +100,49 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+#
+
+function from_hex() {
+    python -c "print(0x$1)"
+}
+
+function to_decimal() {
+    python -c "print('{:d}'.format($1))"
+}
+
+function to_hex() {
+    python -c "print('{:x}'.format($1))"
+}
+
+function to_binary() {
+    python -c "print('{:b}'.format($1))"
+}
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-alias ls=lsd
+alias lls=ls
+alias lsd=lsd
 alias v=lvim
+alias lg=lazygit
+
+alias edge="cd /home/radum/work/das-edge-server"
+alias segmenter="cd /home/radum/work/das-audio-segmenter"
+alias audio="cd /home/radum/work/das-audio-manager"
+alias ads="cd /home/radum/work/das-ads-manager"
+alias work="cd /home/radum/work/"
+
+alias xtd=from_hex
+alias dtx=to_hex
+alias dtb=to_binary
+alias todec=to_decimal
+
+alias mp4ff-info="/home/radum/go/bin/mp4ff-info"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
