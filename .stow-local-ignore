@@ -1,0 +1,11 @@
+.tmux.conf
+.xinitrc
+config.lua
+.profile
+
+/fonts
+
+/das-ads-manager
+/das-audio-manager
+/das-audio-segmenter
+/das-edge-server
