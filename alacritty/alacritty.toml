@@ -1,4 +1,7 @@
-import = ["/home/radum/.config/alacritty/themes/themes/monokai_charcoal.toml"]
+# using https://github.com/alacritty/alacritty-theme
+#import = ["~/.config/alacritty/themes/themes/monokai_charcoal.toml"]
+import = ["~/.config/alacritty/themes/themes/github_dark_high_contrast.toml"]
+
 live_config_reload = true
 
 [font]
