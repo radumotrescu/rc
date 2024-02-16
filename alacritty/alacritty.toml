@@ -1,0 +1,30 @@
+import = ["/home/radum/.config/alacritty/themes/themes/monokai_charcoal.toml"]
+live_config_reload = true
+
+[font]
+size = 11.0
+
+[font.bold]
+family = "Meslo LGL Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Meslo LGL Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGL Nerd Font"
+style = "Regular"
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+decorations = "full"
+dynamic_padding = false
+dynamic_title = true
+startup_mode = "Windowed"
+
+[window.padding]
+x = 15
+y = 15
