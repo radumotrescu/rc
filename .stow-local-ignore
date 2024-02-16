@@ -2,6 +2,7 @@
 .xinitrc
 config.lua
 .git/
+.git
 
 /fonts
 
