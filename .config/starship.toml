@@ -5,6 +5,7 @@
 add_newline = true
 
 format = """
+$time\
 $username\
 $container\
 $hostname\
@@ -31,10 +32,16 @@ format='[$user]($style) '
 show_always = true
 
 [hostname]
-format = ':[$ssh_symbol$hostname]($style) in '
+format = '@[$ssh_symbol$hostname]($style) '
 #ssh_only = false
 disabled = false
 
 [cmd_duration]
 format = "took [$duration]($style) "
 #style = "yellow"
+
+[time]
+format = '[$time]($style) '
+style = 'bold blue'
+time_format = '%F %T'
+disabled = false
