@@ -1,24 +1,18 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$PATH:${HOME}/depot_tools"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export VISUAL=vim
+export VISUAL=/usr/bin/nvim
 export EDITOR="$VISUAL"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -51,7 +45,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -70,7 +64,7 @@ COMPLETION_WAITING_DOTS="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -80,7 +74,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode vscode web-search dirhistory history)
+plugins=(git vi-mode web-search z zsh-autosuggestions k3d zsh-fzf-history-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -125,11 +119,14 @@ function to_binary() {
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
 alias lls=ls
-alias lsd=lsd
-alias v=lvim
+alias ls=lsd
+alias v=nvim
+alias vim=nvim
 alias lg=lazygit
+alias cd=z
+alias cat=bat
 
 alias edge="cd /home/radum/work/das-edge-server"
 alias segmenter="cd /home/radum/work/das-audio-segmenter"
@@ -142,20 +139,35 @@ alias dtx=to_hex
 alias dtb=to_binary
 alias todec=to_decimal
 
+alias dcu="docker compose up"
+alias dcd="docker compose down -v"
+
 alias mp4ff-info="/home/radum/go/bin/mp4ff-info"
+#alias vsc="/usr/bin/code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations "$@""
+alias vsc="code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland ."
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export AWS_PROFILE=mediacreek
 export PATH=/home/radum/.cargo/bin:$PATH
 export PATH=/home/radum/.local/bin:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/opt/llvm@14/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+bindkey '^[[Z' autosuggest-accept
+
 # opam configuration
 [[ ! -r /home/radum/.opam/opam-init/init.zsh ]] || source /home/radum/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
+eval $(opam env --switch=4.08.0 --set-switch) 
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+autoload -U compinit; compinit
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
