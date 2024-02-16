@@ -1,0 +1,32 @@
+layout {
+  default_tab_template {
+      // the default zellij tab-bar and status bar plugins
+      pane size=1 borderless=true {
+          plugin location="zellij:tab-bar"
+      }
+      children
+      pane size=2 borderless=true {
+          plugin location="zellij:status-bar"
+      }
+  }
+  tab name="openvpn" split_direction="horizontal"{
+    pane split_direction="horizontal" {
+      pane {
+        command "sudo" 
+        args "openvpn" "/home/radum/profile-119.ovpn"
+      }
+      pane
+    }
+  }
+  tab name="redis"{
+    pane {
+      cwd "/home/radum/work/das-dev-env"
+      command "docker"
+      args "compose" "up" "redis" 
+    } 
+  }
+  tab {
+    pane {
+    }
+  }
+}

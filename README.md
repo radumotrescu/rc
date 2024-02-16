@@ -7,6 +7,7 @@ fonts destination: `~/.local/share/fonts`
 terminal: `Alacritty`
 shell: `zsh` with `ohmyzsh`
 shell prompt: `starship`
+multiplexer: `zellij`
 better `cd`: `zoxide`
 vim setup: `nvchad`
 file manager: `yazi`
@@ -14,3 +15,4 @@ fuzzy finder: `fzf`
 git tui: `lazygit`
 better `cat`: `bat`
 better ls: `lsd`
+package managers: `flatpak`, `linuxbrew`

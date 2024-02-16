@@ -123,6 +123,7 @@ alias dcd="docker compose down -v"
 
 alias mp4ff-info="/home/radum/go/bin/mp4ff-info"
 alias vsc="code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland ."
+alias zelwork="zellij --layout work"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
