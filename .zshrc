@@ -8,18 +8,6 @@ export ZSH="$HOME/.oh-my-zsh"
 export VISUAL=/usr/bin/nvim
 export EDITOR="$VISUAL"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -119,20 +107,11 @@ function to_binary() {
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# source ~/powerlevel10k/powerlevel10k.zsh-theme
-alias lls=ls
 alias ls=lsd
 alias v=nvim
-alias vim=nvim
 alias lg=lazygit
 alias cd=z
 alias cat=bat
-
-alias edge="cd /home/radum/work/das-edge-server"
-alias segmenter="cd /home/radum/work/das-audio-segmenter"
-alias audio="cd /home/radum/work/das-audio-manager"
-alias ads="cd /home/radum/work/das-ads-manager"
-alias work="cd /home/radum/work/"
 
 alias xtd=from_hex
 alias dtx=to_hex
@@ -143,11 +122,7 @@ alias dcu="docker compose up"
 alias dcd="docker compose down -v"
 
 alias mp4ff-info="/home/radum/go/bin/mp4ff-info"
-#alias vsc="/usr/bin/code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations "$@""
 alias vsc="code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland ."
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
