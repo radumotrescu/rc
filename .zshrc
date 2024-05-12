@@ -127,6 +127,9 @@ alias zelwork="zellij --layout work"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# fix for Charles Proxy
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 export AWS_PROFILE=mediacreek
 export PATH=/home/radum/.cargo/bin:$PATH
 export PATH=/home/radum/.local/bin:$PATH
@@ -146,4 +149,10 @@ eval "$(starship init zsh)"
 eval $(opam env --switch=4.08.0 --set-switch) 
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 autoload -U compinit; compinit
-export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+export KUBECONFIG=~/.kube/config
+
+if [ -e /home/radum/.nix-profile/etc/profile.d/nix.sh ]; then . /home/radum/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
