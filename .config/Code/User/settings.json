@@ -119,7 +119,7 @@
       "*.aac": "hexEditor.hexedit",
       "*.mp4": "hexEditor.hexedit",
       "*.m4s": "hexEditor.hexedit",
-      "*.mp3": "hexEditor.hexedit",
+      "*.mp3": "vscode.audioPreview",
       "*.ts": "default",
       "*.cmfa": "hexEditor.hexedit",
       "*.fmp4": "hexEditor.hexedit",
@@ -136,6 +136,11 @@
     "editor.fontSize": 14,
     "go.toolsManagement.autoUpdate": true,
     "cmake.showOptionsMovedNotification": false,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "editor.stickyScroll.enabled": false,
+    "github.copilot.editor.enableAutoCompletions": false,
+    "github.copilot.editor.enableCodeActions": false,
+    "github.copilot.advanced": {
+    }
     // },
 }
