@@ -4,28 +4,25 @@
     //"ipc": true,
 
     "layer": "top",
-    "position": "top",
+    "position": "right",
 
     // If height property would be not present, it'd be calculated dynamically
     // "height": 30,
+    "margin-top": 7,
+    "margin-bottom": 2,
 
     "modules-left": [
-        "custom/launcher",
         "sway/workspaces",
         "sway/mode",
     ],
  
-    "modules-center": [
-    "sway/window"
-    ],
-
     "modules-right": [
         "network",
         "idle_inhibitor",
         "memory",
         "cpu",
         "pulseaudio",
-        "custom/keyboard-layout",
+        //"custom/keyboard-layout",
         "battery",
         //"custom/PBPbattery",
         "backlight#icon",
@@ -67,12 +64,12 @@
 
     "clock": {
         "interval": 5,
-        "format": " {:%F %T}",
+        "format": " {:%F\n%T}",
         "tooltip-format": "{:%e %B %Y}"
     },
 
     "cpu": {
-        "interval": 5,
+        "interval": 1,
         "format": "  {usage}% ({load})", // Icon: microchip
         "states": {
             "warning": 70,
@@ -93,7 +90,7 @@
     },
 
     "memory": {
-        "interval": 5,
+        "interval": 1,
         "format": " {}%", // Icon: memory
         "on-click": "alacritty -e 'htop'", 
         "states": {
@@ -104,8 +101,8 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-wifi": " ", // Icon: wifi
+        "format-ethernet": " ", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
         "on-click": "alacritty -e 'nmtui'",
