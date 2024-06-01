@@ -2,145 +2,166 @@
   "git.autorefresh": false,
   // "window.titleBarStyle": "custom",
   // "editor.cursorBlinking": "solid",
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.hlsearch": true,
-    "vim.insertModeKeyBindings": [
-      {
-        "before": ["j", "j"],
-        "after": ["<Esc>"]
-      }
-    ],
-    "vim.leader": "<space>",
-    "vim.handleKeys": {
-      "<C-a>": false,
-      "<C-f>": false
-    },
-    // "vim.normalModeKeyBindingsNonRecursive": [
-    //   {
-    //     "before": [":"],
-    //     "commands": ["workbench.action.showCommands"]
-    //   }
-    // ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-      {
-        "before": [">"],
-        "commands": ["editor.action.indentLines"]
-      },
-      {
-        "before": ["<"],
-        "commands": ["editor.action.outdentLines"]
-      },
-      {
-        "before": ["p"],
-        "after": ["p", "g", "v", "y"]
-      }
-    ],
-    // "vim.statusBarColorControl": true,
-    // "vim.statusBarColors.normal": ["#8FBCBB", "#000"],
-    // "vim.statusBarColors.insert": ["#BF616A", "#000"],
-    // "vim.statusBarColors.visual": ["#B48EAD", "#000"],
-    // "vim.statusBarColors.visualline": ["#B48EAD", "#000"],
-    // "vim.statusBarColors.visualblock": ["#A3BE8C", "#000"],
-    // "vim.statusBarColors.replace": "#D08770",
-    // "vim.statusBarColors.commandlineinprogress": "#007ACC",
-    // "vim.statusBarColors.searchinprogressmode": "#007ACC",
-    // "vim.statusBarColors.easymotionmode": "#007ACC",
-    // "vim.statusBarColors.easymotioninputmode": "#007ACC",
-    // "vim.statusBarColors.surroundinputmode": "#007ACC",
-    // "workbench.colorCustomizations": {
-    //     "statusBar.background": "#BF616A",
-    //     "statusBar.noFolderBackground": "#BF616A",
-    //     "statusBar.debuggingBackground": "#BF616A",
-    //     "statusBar.foreground": "#000",
-    //     "statusBar.debuggingForeground": "#000"
-    // },
-
-
-    "explorer.confirmDelete": false,
-    "keyboard.dispatch": "keyCode",
-    "cmake.configureOnOpen": false,
-    // "C_Cpp.intelliSenseCacheSize": 0,
-    // "C_Cpp.intelliSense.maxMemory": 1024,
-    "terminal.integrated.profiles.linux":
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
     {
-        "bash":
-        {
-            "path": "/bin/bash"
-        }
-    },
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "editor.fontWeight": "500",
-    "editor.fontLigatures": false,
-    "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
-    },
-    "C_Cpp.clang_format_style": "Visual Studio",
-    "git.confirmSync": false,
-    "debug.onTaskErrors": "showErrors",
-    "git.autofetch": true,
-    "workbench.editor.wrapTabs": true,
-    "editor.mouseWheelZoom": true,
-    "todohighlight.isEnable": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.defaultDateFormat": null,
-    "gitlens.defaultDateShortFormat": null,
-    "CppHelper.HeaderGuardPattern": "{FILE}_H",
-    "terminal.integrated.fontFamily": "monospace",
-    "security.workspace.trust.untrustedFiles": "open",
-    "explorer.autoReveal": false,
-    "settingsSync.ignoredExtensions": [
-
-    
-    ],
-    "WavPreview.autoAnalyze": true,
-    "git.suggestSmartCommit": false,
-    "editor.largeFileOptimizations": false,
-    "files.maxMemoryForLargeFilesMB": 16000,
-    "jupyter.debugJustMyCode": false,
-    "files.autoSave": "afterDelay",
-    "editor.fontFamily": "MesloLGM NF Nerd Font, Fira Code Medium, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "rest-client.followredirect": false,
-    "debug.showInlineBreakpointCandidates": false,
-    "settingsSync.ignoredSettings": [
-    
-    ],
-    // "editor.rename.enablePreview": false,
-    // "workbench.editor.enablePreview": false,
-    "gitlens.currentLine.dateFormat": "",
-    "rest-client.previewResponsePanelTakeFocus": false,
-    "[python]": {
-      "editor.formatOnType": true
-    },
-    "workbench.editorAssociations": {
-      "*.aac": "hexEditor.hexedit",
-      "*.mp4": "hexEditor.hexedit",
-      "*.m4s": "hexEditor.hexedit",
-      "*.mp3": "vscode.audioPreview",
-      "*.ts": "default",
-      "*.cmfa": "hexEditor.hexedit",
-      "*.fmp4": "hexEditor.hexedit",
-      "*.m4a": "hexEditor.hexedit",
-      "*.out": "hexEditor.hexedit"
-    },
-    "hexeditor.columnWidth": 16,
-    "hexeditor.showDecodedText": true,
-    "hexeditor.defaultEndianness": "little",
-    "hexeditor.inspectorType": "aside",
-    "[javascript]": {
-      "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "editor.fontSize": 14,
-    "go.toolsManagement.autoUpdate": true,
-    "cmake.showOptionsMovedNotification": false,
-    "window.zoomLevel": 1,
-    "editor.stickyScroll.enabled": false,
-    "github.copilot.editor.enableAutoCompletions": false,
-    "github.copilot.editor.enableCodeActions": false,
-    "github.copilot.advanced": {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
-    // },
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  // "vim.normalModeKeyBindingsNonRecursive": [
+  //   {
+  //     "before": [":"],
+  //     "commands": ["workbench.action.showCommands"]
+  //   }
+  // ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    },
+    {
+      "before": [
+        "p"
+      ],
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
+    }
+  ],
+  // "vim.statusBarColorControl": true,
+  // "vim.statusBarColors.normal": ["#8FBCBB", "#000"],
+  // "vim.statusBarColors.insert": ["#BF616A", "#000"],
+  // "vim.statusBarColors.visual": ["#B48EAD", "#000"],
+  // "vim.statusBarColors.visualline": ["#B48EAD", "#000"],
+  // "vim.statusBarColors.visualblock": ["#A3BE8C", "#000"],
+  // "vim.statusBarColors.replace": "#D08770",
+  // "vim.statusBarColors.commandlineinprogress": "#007ACC",
+  // "vim.statusBarColors.searchinprogressmode": "#007ACC",
+  // "vim.statusBarColors.easymotionmode": "#007ACC",
+  // "vim.statusBarColors.easymotioninputmode": "#007ACC",
+  // "vim.statusBarColors.surroundinputmode": "#007ACC",
+  // "workbench.colorCustomizations": {
+  //     "statusBar.background": "#BF616A",
+  //     "statusBar.noFolderBackground": "#BF616A",
+  //     "statusBar.debuggingBackground": "#BF616A",
+  //     "statusBar.foreground": "#000",
+  //     "statusBar.debuggingForeground": "#000"
+  // },
+  "explorer.confirmDelete": false,
+  "keyboard.dispatch": "keyCode",
+  "cmake.configureOnOpen": false,
+  // "C_Cpp.intelliSenseCacheSize": 0,
+  // "C_Cpp.intelliSense.maxMemory": 1024,
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/bin/bash"
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "editor.fontWeight": "500",
+  "editor.fontLigatures": false,
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "C_Cpp.clang_format_style": "Visual Studio",
+  "git.confirmSync": false,
+  "debug.onTaskErrors": "showErrors",
+  "git.autofetch": true,
+  "workbench.editor.wrapTabs": true,
+  "editor.mouseWheelZoom": true,
+  "todohighlight.isEnable": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.defaultDateFormat": null,
+  "gitlens.defaultDateShortFormat": null,
+  "CppHelper.HeaderGuardPattern": "{FILE}_H",
+  "terminal.integrated.fontFamily": "monospace",
+  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.autoReveal": false,
+  "settingsSync.ignoredExtensions": [],
+  "WavPreview.autoAnalyze": true,
+  "git.suggestSmartCommit": false,
+  "editor.largeFileOptimizations": false,
+  "files.maxMemoryForLargeFilesMB": 16000,
+  "jupyter.debugJustMyCode": false,
+  "files.autoSave": "afterDelay",
+  "editor.fontFamily": "MesloLGM NF Nerd Font, Fira Code Medium, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "rest-client.followredirect": false,
+  "debug.showInlineBreakpointCandidates": false,
+  "settingsSync.ignoredSettings": [],
+  // "editor.rename.enablePreview": false,
+  // "workbench.editor.enablePreview": false,
+  "gitlens.currentLine.dateFormat": "",
+  "rest-client.previewResponsePanelTakeFocus": false,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "workbench.editorAssociations": {
+    "*.aac": "hexEditor.hexedit",
+    "*.mp4": "hexEditor.hexedit",
+    "*.m4s": "hexEditor.hexedit",
+    "*.mp3": "vscode.audioPreview",
+    "*.ts": "default",
+    "*.cmfa": "hexEditor.hexedit",
+    "*.fmp4": "hexEditor.hexedit",
+    "*.m4a": "hexEditor.hexedit",
+    "*.out": "hexEditor.hexedit"
+  },
+  "hexeditor.columnWidth": 16,
+  "hexeditor.showDecodedText": true,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.fontSize": 14,
+  "go.toolsManagement.autoUpdate": true,
+  "cmake.showOptionsMovedNotification": false,
+  "window.zoomLevel": 1,
+  "editor.stickyScroll.enabled": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.editor.enableCodeActions": false,
+  "github.copilot.advanced": {},
+  "git.openRepositoryInParentFolders": "always",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "workbench.settings.applyToAllProfiles": [
+    "github.copilot.editor.enableAutoCompletions"
+  ],
+  "editor.inlineSuggest.enabled": false
+  // },
 }
