@@ -162,6 +162,11 @@
   "workbench.settings.applyToAllProfiles": [
     "github.copilot.editor.enableAutoCompletions"
   ],
-  "editor.inlineSuggest.enabled": false
+  "editor.inlineSuggest.enabled": false,
+  "[go]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "golang.go"
+  },
+  "files.insertFinalNewline": true
   // },
 }

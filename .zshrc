@@ -135,6 +135,7 @@ export PATH=/home/radum/.cargo/bin:$PATH
 export PATH=/home/radum/.local/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/opt/llvm@14/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -150,6 +151,7 @@ eval $(opam env --switch=4.08.0 --set-switch)
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 autoload -U compinit; compinit
 export KUBECONFIG=~/.kube/config
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 if [ -e /home/radum/.nix-profile/etc/profile.d/nix.sh ]; then . /home/radum/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 export PYENV_ROOT="$HOME/.pyenv"
