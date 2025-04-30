@@ -273,8 +273,9 @@ bar {
 #}
 
 # Screenshot
-  bindsym print exec /usr/share/sway/scripts/grimshot --notify save output
+  #bindsym print exec /usr/share/sway/scripts/grimshot --notify save output
   bindsym Shift+print exec ~/.config/sway/screenshot.sh
+  bindsym print exec flatpak run org.flameshot.Flameshot gui
 
 # Autostart
 exec flatpak run com.slack.Slack && sway '[app_id="Slack"]' move container to workspace 9

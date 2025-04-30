@@ -118,7 +118,10 @@
   "editor.fontFamily": "MesloLGM NF Nerd Font, Fira Code Medium, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "rest-client.followredirect": false,
   "debug.showInlineBreakpointCandidates": false,
-  "settingsSync.ignoredSettings": [],
+  "settingsSync.ignoredSettings": [
+    "-C_Cpp.maxMemory",
+    "-window.zoomLevel"
+  ],
   // "editor.rename.enablePreview": false,
   // "workbench.editor.enablePreview": false,
   "gitlens.currentLine.dateFormat": "",
@@ -127,6 +130,7 @@
     "editor.formatOnType": true
   },
   "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
     "*.aac": "hexEditor.hexedit",
     "*.mp4": "hexEditor.hexedit",
     "*.m4s": "hexEditor.hexedit",
@@ -144,10 +148,8 @@
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "editor.fontSize": 14,
   "go.toolsManagement.autoUpdate": true,
   "cmake.showOptionsMovedNotification": false,
-  "window.zoomLevel": 1,
   "editor.stickyScroll.enabled": false,
   "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.editor.enableCodeActions": false,
@@ -167,6 +169,16 @@
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "golang.go"
   },
-  "files.insertFinalNewline": true
-  // },
+  "files.insertFinalNewline": true,
+  "scm.showHistoryGraph": false,
+  "C_Cpp.intelliSense.maxMemory": 1000,
+  "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+  "[proto3]": {
+    "editor.defaultFormatter": "zxh404.vscode-proto3"
+  },
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "window.zoomLevel": 1.3
 }
