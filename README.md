@@ -4,8 +4,9 @@ fonts destination: `~/.local/share/fonts`
 
 `stow` for dotfile management, copy this dotfile folder in the root of `~`: `stow .`
 
-# themes
-copy `.themes` folder in your home dir
+# themes/icons/fonts
+* copy `.themes` folder in your home dir
+* Bibata Original Ice cursor
 
 # system
 Wayland
