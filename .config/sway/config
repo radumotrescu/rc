@@ -31,24 +31,27 @@ set $menu rofi -show combi -combi-modes "window,drun" -modes combi | xargs swaym
 #set $menu exec $term -a launcher -e /home/radum/sway_launcher_desktop.sh
 #set $menu exec $term -a launcher -e /home/radum/sway_launcher_desktop.sh
 
+# PipeWire
+exec pipewire
+
 ## Lock Screen
-  bindsym $mod+f1 exec ~/.config/sway/lockman.sh
+bindsym $mod+f1 exec ~/.config/sway/lockman.sh
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output * bg /usr/share/backgrounds/fedora-workstation/glasscurtains_dark.webp fill
-output * bg /home/radum/Downloads/Aru-1080-Wallpaper.jpg fill
+output * bg /home/radum/Downloads/void_42.png fill
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output 'Dell Inc. DELL S2721DGF 5GQFZ13' pos 0 0 res 2560x1440@119.998Hz
-output eDP-1 pos 2560 240 res 3840x2400@60.000Hz
-output eDP-1 scale 2
+output HDMI-A-1 pos 0 0 res 2560x1440@119.998Hz
+#output eDP-1 pos 2560 240 res 3840x2400@60.000Hz
+#output eDP-1 scale 2
 
 set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
@@ -288,3 +291,6 @@ exec mako
 exec sway-alttab
 
 include /etc/sway/config.d/*
+
+# runit make sure XDG desktop portal is set up correctly
+exec dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
