@@ -110,7 +110,7 @@ function to_binary() {
 alias ls=lsd
 alias v=nvim
 alias lg=lazygit
-alias cd=z
+#alias cd=z
 alias cat=bat
 
 alias xtd=from_hex
