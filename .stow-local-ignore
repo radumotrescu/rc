@@ -10,3 +10,7 @@ config.lua
 /das-audio-manager
 /das-audio-segmenter
 /das-edge-server
+Code*
+sway.desktop
+vscode-url-handler.dekstop
+vscode.desktop
