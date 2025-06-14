@@ -2,7 +2,7 @@
 
 fonts destination: `~/.local/share/fonts`
 
-`stow` for dotfile management, copy this dotfile folder in the root of `~`: `stow . --adopt`
+`stow` for dotfile management, copy this dotfile folder in the root of `~`: `stow .`
 
 # system
 Wayland
