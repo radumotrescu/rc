@@ -137,6 +137,8 @@ export PATH=/home/linuxbrew/.linuxbrew/opt/llvm@14/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$HOME/go/bin:$PATH"
+# VSCode install, manually download the binaries, put them in /opt/vscode
+export PATH=/opt/vscode/bin:$PATH 
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
