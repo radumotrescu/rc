@@ -62,7 +62,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode web-search z zsh-autosuggestions k3d zsh-fzf-history-search)
+plugins=(git vi-mode web-search z zsh-autosuggestions zsh-fzf-history-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,7 +133,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export AWS_PROFILE=mediacreek
 export PATH=/home/radum/.cargo/bin:$PATH
 export PATH=/home/radum/.local/bin:$PATH
-export PATH=/home/linuxbrew/.linuxbrew/opt/llvm@14/bin:$PATH
+#export PATH=/home/linuxbrew/.linuxbrew/opt/llvm@14/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$HOME/go/bin:$PATH"
@@ -146,17 +146,17 @@ export NVM_DIR="$HOME/.nvm"
 
 bindkey '^[[Z' autosuggest-accept
 
-# opam configuration
-[[ ! -r /home/radum/.opam/opam-init/init.zsh ]] || source /home/radum/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-eval $(opam env --switch=4.08.0 --set-switch) 
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+# opam configuration
+# [[ ! -r /home/radum/.opam/opam-init/init.zsh ]] || source /home/radum/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+# eval $(opam env --switch=4.08.0 --set-switch) 
+# eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 autoload -U compinit; compinit
 export KUBECONFIG=~/.kube/config
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
-if [ -e /home/radum/.nix-profile/etc/profile.d/nix.sh ]; then . /home/radum/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
