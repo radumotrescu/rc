@@ -4,6 +4,9 @@ fonts destination: `~/.local/share/fonts`
 
 `stow` for dotfile management, copy this dotfile folder in the root of `~`: `stow .`
 
+# themes
+copy `.themes` folder in your home dir
+
 # system
 Wayland
 window manager: `sway`
@@ -19,14 +22,27 @@ brightness and volume notification daemon: `avizo`
 
 # terminal
 terminal: `Alacritty`
+
 shell: `zsh` with `ohmyzsh`
+
 shell prompt: `starship`
+
 multiplexer: `zellij`
+
 better `cd`: `zoxide`
+
 vim setup: `nvchad` -> `~/.config/nvim`
+
 file manager: `yazi`
+
 fuzzy finder: `fzf`
+
 git tui: `lazygit`
+
 better `cat`: `bat`
+
 better ls: `lsd`
+
 terminal container manager: `distrobox`
+
+gtk settings editor: `nwg-look`
