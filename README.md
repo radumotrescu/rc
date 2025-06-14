@@ -19,6 +19,7 @@ package managers: `flatpak`, `linuxbrew`
 volume control: `volumectl`
 brightness control: `lightctl`
 brightness and volume notification daemon: `avizo`
+login manager: `ly` (loads `XDG_DATA_DIRS` correctly from profile) ; `emptty` (doesn't load `.profile` by default, so it needs more work)
 
 # terminal
 terminal: `Alacritty`
