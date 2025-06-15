@@ -7,31 +7,129 @@
     "position": "right",
 
     // If height property would be not present, it'd be calculated dynamically
-    // "height": 30,
-    "margin-top": 7,
-    "margin-bottom": 2,
+    // "height": 1200,
+    "margin-top": 0,
+    "margin-bottom": 0,
 
-    "modules-left": [
+    // MODULES RIGHT
+    "modules-right": [
+        "pulseaudio#audio",
+        "bluetooth",
+        "network#wlp6s0",
+        "network#enp7s0"
+    ],
+    "pulseaudio#audio": {
+        "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon} ",
+        "format-bluetooth-muted": "󰂯\n󰖁",
+        "format-muted": "󰖁",
+        // "format-source": "{volume}% ",
+        // "format-source-muted": "",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
+    },
+    "bluetooth": {
+        "format-disabled": "",
+        "format-off": "",
+        "format-on": "󰂯",
+        "format-connected": "󰂯",
+        "format-connected-battery": "󰂯",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias} 󰂄{device_battery_percentage}% {device_address}",
+        "on-click": "alacritty -e bluetuith --no-warning",
+        "tooltip": true
+    },
+    "network#wlp6s0": {
+        "interval": 1,
+        "interface": "wlp6s0",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-wifi": "{icon}",
+        "format-disconnected": "",
+        "on-click": "nm-connection-editor",
+        "tooltip": true,
+        "tooltip-format": "󰢮 {ifname}\n󰩟 {ipaddr}/{cidr}\n{icon} {essid}\n󱑽 {signalStrength}% {signaldBm} dBm {frequency} MHz\n󰞒 {bandwidthDownBytes}\n󰞕 {bandwidthUpBytes}"
+    },
+    "network#enp7s0": {
+        "interval": 1,
+        "interface": "enp7s0",
+        "format-icons": ["󰈀"],
+        "format-ethernet": "{icon}",
+        "format-disconnected": "",
+        "on-click": "",
+        "tooltip": true,
+        "tooltip-format": "󰢮 {ifname}\n󰩟 {ipaddr}/{cidr}\n󰞒 {bandwidthDownBytes}\n󰞕 {bandwidthUpBytes}"
+    },
+
+    // MODULES CENTER
+    "modules-center": [
         "sway/workspaces",
         "sway/mode",
     ],
- 
-    "modules-right": [
-        "network",
-        "idle_inhibitor",
-        "memory",
-        "cpu",
-        "pulseaudio",
-        //"custom/keyboard-layout",
-        "battery",
-        //"custom/PBPbattery",
-        "backlight#icon",
-        "backlight#value",
-        "clock",
+    "sway/mode": {
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 120
+    },
+
+    "sway/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "default": "1"
+        },
+        "on-click": "activate"
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 24,
+        "tooltip": false,
+     },
+
+    // MODULES left
+    "modules-left": [
         "tray",
-        //"custom/weather",
-        "custom/power",
+        "cpu",
+        "memory",
+        "clock"
+        // "idle_inhibitor",
+        //"custom/keyboard-layout",
+        // "battery",
+        //"custom/PBPbattery",
+        // "backlight#icon",
+        // "backlight#value",
+        // "custom/weather",
+        // "custom/power",
     ],
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+        "show-passive-items": true,
+     },
 
     // Modules
 
@@ -63,9 +161,11 @@
     },
 
     "clock": {
-        "interval": 5,
-        "format": " {:%F\n%T}",
-        "tooltip-format": "{:%e %B %Y}"
+        "interval": 1,
+        "format": "󰣆\n{:%d\n%m\n%y\n\n󰥔\n%H\n%M\n%S}",
+        "format-alt": "󰥔\n{:%H\n%M\n%S}",
+        "tooltip": true,
+        "tooltip-format": "{:%e %B %Y}",
     },
 
     "cpu": {
@@ -114,52 +214,6 @@
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
     },
 
-    "sway/mode": {
-        "format": "{}",
-        "tooltip": false
-    },
-
-    "sway/window": {
-        "format": "{}",
-        "max-length": 120
-    },
-
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "disable-markup" : false,
-        "all-outputs": true,
-        "format": "  {icon}  ",
-        //"format":"{icon}",
-        //"format-icons": {
-        //    "1": "",
-        //    "2": "",
-        //    "3": "",
-        //    "4": "",
-        //}
-    },
-
-    "pulseaudio": {
-        "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}  {format_source}",
-        "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": "婢 {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "וֹ",
-            "headset": "  ",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [""]
-        },
-        "on-click": "pavucontrol",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
-    },
-
     // to use the weather module replace <your_location> with your city or town
     // note: do not use spaces: new york would be newyork
     "custom/weather": {
@@ -167,11 +221,6 @@
         "return-type": "json",
         "interval": 600,
     },
-
-    "tray": {
-        "icon-size": 18,
-        "spacing":10,
-     },
 
     "backlight#icon": {
         "format": "{icon}",
