@@ -115,7 +115,7 @@
   "files.maxMemoryForLargeFilesMB": 16000,
   "jupyter.debugJustMyCode": false,
   "files.autoSave": "afterDelay",
-  "editor.fontFamily": "MesloLGM NF Nerd Font, Fira Code Medium, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontFamily": "MesloLGM Nerd Font Mono, Fira Code Medium, 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "rest-client.followredirect": false,
   "debug.showInlineBreakpointCandidates": false,
   "settingsSync.ignoredSettings": [
