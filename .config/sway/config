@@ -34,6 +34,12 @@ set $menu rofi -show combi -combi-modes "window,drun" -modes combi | xargs swaym
 # PipeWire
 exec pipewire
 
+# Notification Center
+exec swaync
+
+# Toggle control center
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
 ## Lock Screen
 bindsym $mod+f1 exec ~/.config/sway/lockman.sh
 

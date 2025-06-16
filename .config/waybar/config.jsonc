@@ -13,11 +13,32 @@
 
     // MODULES RIGHT
     "modules-right": [
+        "custom/notification",
         "pulseaudio#audio",
         "bluetooth",
         "network#wlp6s0",
         "network#enp7s0"
     ],
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{} {icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
     "pulseaudio#audio": {
         "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
