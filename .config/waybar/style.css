@@ -72,6 +72,7 @@ tooltip label {
 #workspaces button.focused,
 #workspaces button.active {
     color: @white;
+    border: 3px solid @lightgray;
     transition: all 0.3s ease;
     animation: colored-gradient 10s ease infinite;
 }
