@@ -70,5 +70,9 @@
       {
         "key": "ctrl+s",
         "command": "-workbench.action.files.save"
+      },
+      {
+        "key": "ctrl+, ctrl+m",
+        "command": "go.test.cursor"
       }
 ]
