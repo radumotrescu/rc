@@ -41,7 +41,8 @@ exec swaync
 bindsym $mod+Shift+n exec swaync-client -t -sw
 
 ## Lock Screen
-bindsym $mod+f1 exec ~/.config/sway/lockman.sh
+#bindsym $mod+f1 exec ~/.config/sway/lockman.sh
+bindsym $mod+p exec swaylock
 
 ### Output configuration
 #
@@ -55,6 +56,8 @@ output * bg /home/radum/Downloads/void_42.png fill
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+set $output-primary HDMI-A-1
 output HDMI-A-1 pos 0 0 res 2560x1440@119.998Hz
 #output eDP-1 pos 2560 240 res 3840x2400@60.000Hz
 #output eDP-1 scale 2
@@ -159,6 +162,13 @@ input "type:keyboard" {
 #
 # Workspaces:
 #
+    workspace 1 output $output-primary
+    workspace 2 output $output-primary
+    workspace 3 output $output-primary
+    workspace 4 output $output-primary
+    workspace 5 output $output-primary
+    workspace 6 output $output-primary
+    workspace 7 output $output-primary
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -169,7 +179,7 @@ input "type:keyboard" {
     bindsym $mod+7 workspace number 7
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
+    bindsym $mod+0 workspace number 0
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -180,7 +190,7 @@ input "type:keyboard" {
     bindsym $mod+Shift+7 move container to workspace number 7
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
+    bindsym $mod+Shift+0 move container to workspace number 0
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #

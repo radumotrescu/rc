@@ -3,7 +3,7 @@
 # daemonize
 indicator-caps-lock
 # datestr=%A
-image=$HOME/.config/sway/mermaid_dark.webp
+image=$HOME/.config/pawel.jpg
 scaling=fill
 font=UbuntuMono
 font-size=20

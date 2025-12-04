@@ -124,13 +124,14 @@ alias dcd="docker compose down -v"
 alias mp4ff-info="/home/radum/go/bin/mp4ff-info"
 alias vsc="code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland ."
 alias zelwork="zellij --layout work"
+alias dush="du -sh $(\ls -A) | sort -h"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fix for Charles Proxy
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-export AWS_PROFILE=mediacreek
+export AWS_PROFILE=soundstack
 export PATH=/home/radum/.cargo/bin:$PATH
 export PATH=/home/radum/.local/bin:$PATH
 #export PATH=/home/linuxbrew/.linuxbrew/opt/llvm@14/bin:$PATH
