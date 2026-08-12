@@ -138,6 +138,7 @@ export PATH=/home/radum/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$HOME/go/bin:$PATH"
+export GOPRIVATE=github.com/MediaCreek/
 # VSCode install, manually download the binaries, put them in /opt/vscode
 export PATH=/opt/vscode/bin:$PATH 
 
