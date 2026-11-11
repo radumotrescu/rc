@@ -165,3 +165,5 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export SOPS_AGE_KEY_FILE=$HOME/.sops/age.agekey
+
+eval "$(edge-drain completion zsh)"
