@@ -1,0 +1,289 @@
+// Shared bar settings and module definitions, included by every bar in config.jsonc.
+// Values set in config.jsonc take precedence over the ones here.
+{
+    // "bar_id": "bar-0",
+    //"ipc": true,
+
+    "layer": "top",
+
+    // If height property would be not present, it'd be calculated dynamically
+    // "height": 1200,
+    "margin-top": 0,
+    "margin-bottom": 0,
+
+    // MODULES RIGHT
+    "modules-right": [
+        "custom/notification",
+        "pulseaudio#audio",
+        "bluetooth",
+        "network#wlp6s0",
+        "network#enp7s0"
+    ],
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{} {icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "pulseaudio#audio": {
+        "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon} ",
+        "format-bluetooth-muted": "󰂯\n󰖁",
+        "format-muted": "󰖁",
+        // "format-source": "{volume}% ",
+        // "format-source-muted": "",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
+    },
+    "bluetooth": {
+        "format-disabled": "",
+        "format-off": "",
+        "format-on": "󰂯",
+        "format-connected": "󰂯",
+        "format-connected-battery": "󰂯",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias} 󰂄{device_battery_percentage}% {device_address}",
+        "on-click": "alacritty -e bluetuith --no-warning",
+        "tooltip": true
+    },
+    "network#wlp6s0": {
+        "interval": 1,
+        "interface": "wlp6s0",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-wifi": "{icon}",
+        "format-disconnected": "",
+        "on-click": "nm-connection-editor",
+        "tooltip": true,
+        "tooltip-format": "󰢮 {ifname}\n󰩟 {ipaddr}/{cidr}\n{icon} {essid}\n󱑽 {signalStrength}% {signaldBm} dBm {frequency} MHz\n󰞒 {bandwidthDownBytes}\n󰞕 {bandwidthUpBytes}"
+    },
+    "network#enp7s0": {
+        "interval": 1,
+        "interface": "enp7s0",
+        "format-icons": ["󰈀"],
+        "format-ethernet": "{icon}",
+        "format-disconnected": "",
+        "on-click": "",
+        "tooltip": true,
+        "tooltip-format": "󰢮 {ifname}\n󰩟 {ipaddr}/{cidr}\n󰞒 {bandwidthDownBytes}\n󰞕 {bandwidthUpBytes}"
+    },
+
+    // MODULES CENTER
+    "modules-center": [
+        "sway/workspaces",
+        "sway/mode",
+    ],
+    "sway/mode": {
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 120
+    },
+
+    "sway/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "default": "_"
+        },
+        "on-click": "activate"
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 24,
+        "tooltip": false,
+     },
+
+    // MODULES left
+    "modules-left": [
+        "tray",
+        "cpu",
+        "memory",
+        "clock"
+        // "idle_inhibitor",
+        //"custom/keyboard-layout",
+        // "battery",
+        //"custom/PBPbattery",
+        // "backlight#icon",
+        // "backlight#value",
+        // "custom/weather",
+        // "custom/power",
+    ],
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+        "show-passive-items": true,
+     },
+
+    // Modules
+
+    "idle_inhibitor": {
+        "format": "{icon} ",
+        "format-icons":{
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "custom/PBPbattery": {
+        "exec": "~/.config/waybar/scripts/PBPbattery.sh",
+        "format": "{}",
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "󰣆\n{:%d\n%m\n%y\n\n󰥔\n%H\n%M\n%S}",
+        "format-alt": "󰥔\n{:%H\n%M\n%S}",
+        "tooltip": true,
+        "tooltip-format": "{:%e %B %Y}",
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "  {usage}% ({load})", // Icon: microchip
+        "states": {
+            "warning": 70,
+            "critical": 90,
+        },
+        "on-click": "alacritty -e 'htop'",
+    },
+
+    "custom/keyboard-layout": {
+        "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+        // Interval set only as a fallback, as the value is updated by signal
+        "interval": 30,
+        "format": "  {}", // Icon: keyboard
+        // Signal sent by Sway key binding (~/.config/sway/key-bindings)
+        "signal": 1, // SIGHUP
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/keyhint.sh",
+    },
+
+    "memory": {
+        "interval": 1,
+        "format": " {}%", // Icon: memory
+        "on-click": "alacritty -e 'htop'", 
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": " ", // Icon: wifi
+        "format-ethernet": " ", // Icon: ethernet
+        "format-disconnected": "⚠  Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "on-click": "alacritty -e 'nmtui'",
+    },
+    "network#vpn": {
+        "interface": "tun0",
+        "format": "  {essid} ({signalStrength}%)",
+        "format-disconnected": "⚠  Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    },
+
+    // to use the weather module replace <your_location> with your city or town
+    // note: do not use spaces: new york would be newyork
+    "custom/weather": {
+        "exec": "~/.config/waybar/scripts/weather.sh <your_location>", 
+        "return-type": "json",
+        "interval": 600,
+    },
+
+    "backlight#icon": {
+        "format": "{icon}",
+        "format-icons": [""],
+        "on-scroll-down": "brightnessctl -c backlight set 1%-",
+        "on-scroll-up": "brightnessctl -c backlight set +1%"
+    },
+
+    "backlight#value" :{
+         "format": "{percent}%",
+         "on-scroll-down": "brightnessctl -c backlight set 1%-",
+         "on-scroll-up": "brightnessctl -c backlight set +1%"
+    },
+
+    "custom/firefox": {
+        "format": " ",
+        "on-click": "exec firefox",
+        "tooltip": false
+    },
+
+    "custom/terminal": {
+        "format": " ",
+        "on-click": "exec xfce4-terminal",
+        "tooltip": false
+    },
+
+    "custom/files": {
+        "format": " ",
+        "on-click": "exec thunar",
+        "tooltip": false
+    },
+
+    "custom/launcher": {
+        "format":" ",
+        "on-click": "exec wofi -c ~/.config/wofi/config -I",
+        "tooltip": false,
+    },
+
+    "custom/power": {
+        "format":"⏻",
+        "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
+        "tooltip": false,
+    },
+}
